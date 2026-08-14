@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevShop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar__brand">Dev<span>Shop</span></div>
+    <nav class="navbar__cart" id="cart-toggle">
+      <span class="cart-icon">🛒</span>
+      <span class="cart-count" id="cart-count">0</span>
+    </nav>
+  </header>
+
+  <main class="page">
+
+    <div class="toolbar">
+      <div class="filters" id="category-filters">
+        <button class="filter-btn active" data-category="all">Tous</button>
+      </div>
+      <input
+        type="text"
+        id="search-input"
+        class="search-input"
+        placeholder="Rechercher un produit..."
+      >
+    </div>
+
+    <div id="loader" class="loader">
+      <div class="spinner"></div>
+      <p>Chargement des produits...</p>
+    </div>
+
+    <div id="error-message" class="error-message hidden">
+      Impossible de charger les produits. Vérifie ta connexion et réessaie.
+    </div>
+
+    <p id="no-results" class="no-results hidden">Aucun produit ne correspond à ta recherche.</p>
+
+    <section id="product-grid" class="product-grid"></section>
+
+  </main>
+
+  <!-- Tiroir panier off-canvas -->
+  <div id="cart-overlay" class="cart-overlay hidden"></div>
+  <aside id="cart-drawer" class="cart-drawer">
+    <div class="cart-drawer__header">
+      <h2>Mon panier</h2>
+      <button id="cart-close" class="cart-close">✕</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-drawer__footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cart-total-value">0.00 $</span>
+      </div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
